@@ -1,9 +1,14 @@
 <script setup lang="ts">
 import TheWelcome from '../components/TheWelcome.vue'
+import Layout from '../components/Layout.vue'
 </script>
 
 <template>
-  <main>
-    <TheWelcome />
-  </main>
+    <main>
+        <Layout />
+    </main>
 </template>
+
+<style lang="scss">
+
+</style>
