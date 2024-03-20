@@ -1,9 +1,9 @@
 <script lang="ts" setup>
 import { defineComponent } from 'vue'
-import { useStatus } from '../stores/status'
+import { useStatusHandler } from '../stores/statusHandler'
 import Game from '../components/Game.vue'
 
-const status = useStatus()
+const status = useStatusHandler()
 // console.log(status.step)
 </script>
 
@@ -13,7 +13,7 @@ const status = useStatus()
     </section>
 </template>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .c-inner {
     position: relative;
     width: 100%;
@@ -21,5 +21,19 @@ const status = useStatus()
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.c-glass {
+    background-color: rgba(0, 0, 0, 0.4);
+    border-radius: 32px;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: (12px);
+    border: solid 1px #1b003f;
+}
+
+.c-glow-txt {
+    filter: drop-shadow(0 0 12px rgba(255, 255, 255, 0.8));
+    -webkit-filter: drop-shadow(0 0 12px rgba(255, 255, 255, 0.8));
+    color: white;
 }
 </style>

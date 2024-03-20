@@ -1,8 +1,12 @@
 <script lang="ts" setup>
 import { computed } from 'vue'
-import { useStatus } from '../stores/status'
+import { useStatusHandler } from '../stores/statusHandler'
 import StartBtn from './StartBtn.vue'
-const gameStatus = useStatus()
+import SubTxt from '../components/SubTxt.vue'
+import KeyboardM from '../components/KeyboardModule.vue'
+import DisplayLayout from '../components/DisplayLayout.vue'
+import FwBackGround from '../components/FwBackground.vue'
+const gameStatus = useStatusHandler()
 const classObj = computed(() => {
     return {
         [`step-${gameStatus.step}`]: gameStatus.step !== null,
@@ -15,16 +19,18 @@ const classObj = computed(() => {
 
 <template>
     <div class="game">
-        <!-- {{ gameStatus.step }} -->
+        <KeyboardM />
+        <FwBackGround />
         <div class="game__inner" :class="classObj">
-            <div class="game__bg"></div>
             <StartBtn v-if="gameStatus.isReady" />
+            <DisplayLayout />
+            <SubTxt />
         </div>
     </div>
 </template>
 
 <style lang="scss">
-.game__inner {
+.game {
     position: relative;
     width: 1280px;
     height: 720px;
@@ -32,10 +38,12 @@ const classObj = computed(() => {
     justify-content: center;
     align-items: center;
 }
-.game__bg {
-    position: absolute;
-    background: linear-gradient(0.25turn, #3f87a6, #ebf8e1, #f69d3c);
-    width: 100%;
-    height: 100%;
+.game__inner {
+    position: relative;
+    width: 90%;
+    height: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 </style>

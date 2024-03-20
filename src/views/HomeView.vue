@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import TheWelcome from '../components/TheWelcome.vue'
 import Layout from '../components/Layout.vue'
 </script>
 
@@ -9,6 +8,4 @@ import Layout from '../components/Layout.vue'
     </main>
 </template>
 
-<style lang="scss">
-
-</style>
+<style lang="scss"></style>

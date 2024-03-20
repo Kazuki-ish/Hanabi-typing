@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { computed } from 'vue'
-import { useStatus } from '../stores/status'
+import { useStatusHandler } from '../stores/statusHandler'
 
-const gameStatus = useStatus()
+const gameStatus = useStatusHandler()
 
 function gameStart() {
     gameStatus.incrementStep()
@@ -12,17 +12,16 @@ function gameStart() {
 </script>
 
 <template>
-    <button class="start text-white" @click="gameStart"><h2>Start Hanabi Typing!</h2></button>
+    <button class="start c-glass" @click="gameStart">
+        <h2 class="c-glow-txt">Start Hanabi Typing!</h2>
+    </button>
 </template>
 
 <style lang="scss" scoped>
 .start {
     position: relative;
     padding: 24px 32px;
-    background-color: rgba(0, 0, 0, 0.4);
-    border-radius: 12px;
     border: solid 1px black;
-    backdrop-filter: blur(12px);
     font-size: 24px;
 
     h2 {

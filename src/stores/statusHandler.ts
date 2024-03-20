@@ -9,7 +9,7 @@ interface StatusState {
     isReady: boolean
 }
 
-export const useStatus = defineStore('status', {
+export const useStatusHandler = defineStore('statusHandler', {
     state: (): StatusState => ({
         step: 1,
         gameOver: false,
@@ -23,10 +23,12 @@ export const useStatus = defineStore('status', {
     // アクションを定義します。アクションは状態を変更するメソッドです。
     actions: {
         incrementStep() {
-            this.step += 1
+            this.step++
         },
         gameStart() {
             this.isReady = false
+            this.step++
+            // console.log(this.step)
         }
     }
 })
