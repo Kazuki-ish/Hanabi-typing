@@ -1,15 +1,19 @@
 <script setup lang="ts">
-import { useFireworks } from '../stores/fireworksHandler'
+import { useFireworks } from '../stores/fireworksModel'
 import { onMounted, ref } from 'vue'
 
 const fw = useFireworks()
+const fireworksCanvas = ref(null)
 
 onMounted(() => {
-    fw.FireworkSketch(1, 1)
+    if (fireworksCanvas.value) {
+        fireworksCanvas.value.addEventListener('click', () => fw.FireworkSketch(-1, -1), false)
+    }
 })
 </script>
+
 <template>
-    <div class="game__bg" id="canvas-container" ref="fireworksCanvas"></div>
+    <div class="game__bg" ref="fireworksCanvas" id="canvas-container"></div>
 </template>
 
 <style lang="scss">
