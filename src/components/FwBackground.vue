@@ -18,7 +18,7 @@ function trigger() {
 
     // fws.push(fw.FireworkSketch(-1, -1))
     fw.FireworkSketch(-1, -1)
-    console.log(fw)
+    // console.log(fw)
 }
 </script>
 

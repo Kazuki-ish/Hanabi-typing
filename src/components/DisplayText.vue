@@ -6,7 +6,7 @@ const displayText = useText.displayText
 
 onMounted(() => {
     const ref = document.getElementById('textref')
-    console.log(useText)
+    // console.log(useText)
     // useText.addTextRef(ref)
 })
 </script>
