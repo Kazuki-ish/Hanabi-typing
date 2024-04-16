@@ -26,8 +26,8 @@ const status = useStatusHandler()
 .c-glass {
     background-color: rgba(0, 0, 0, 0.4);
     border-radius: 32px;
-    backdrop-filter: blur(6px);
-    -webkit-backdrop-filter: (6px);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: (4px);
     border: solid 1px #1b003f;
 }
 
