@@ -1,12 +1,12 @@
 <script lang="ts" setup>
 import { computed } from 'vue'
-import { useStatusHandler } from '../stores/statusHandler'
+import { usestatusModel } from '../stores/statusModel'
 import StartBtn from './StartBtn.vue'
 import SubTxt from '../components/SubTxt.vue'
 import KeyboardM from '../components/KeyboardModule.vue'
 import DisplayLayout from '../components/DisplayLayout.vue'
 import FwBackGround from '../components/FwBackground.vue'
-const gameStatus = useStatusHandler()
+const gameStatus = usestatusModel()
 const classObj = computed(() => {
     return {
         [`step-${gameStatus.step}`]: gameStatus.step !== null,
@@ -23,7 +23,7 @@ const classObj = computed(() => {
         <FwBackGround />
         <div class="game__inner" :class="classObj">
             <StartBtn v-if="gameStatus.isReady" />
-            <DisplayLayout />
+            <DisplayLayout v-if="!gameStatus.isReady" />
             <SubTxt />
         </div>
     </div>

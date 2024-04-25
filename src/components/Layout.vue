@@ -1,9 +1,9 @@
 <script lang="ts" setup>
 import { defineComponent } from 'vue'
-import { useStatusHandler } from '../stores/statusHandler'
+import { usestatusModel } from '../stores/statusModel'
 import Game from '../components/Game.vue'
 
-const status = useStatusHandler()
+const status = usestatusModel()
 // console.log(status.step)
 </script>
 

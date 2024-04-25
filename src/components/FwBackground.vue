@@ -1,22 +1,22 @@
 <script setup lang="ts">
 import { useFireworks } from '../stores/fireworksModel'
-import { onMounted, ref } from 'vue'
+import { onMounted, ref, watchEffect } from 'vue'
 
 const fw = useFireworks()
-let fws = []
-// const fireworksCanvas = ref(null)
 
 onMounted(() => {
     // fw.FireworkSketch(-1, -1)
     // if (fireworksCanvas.value) {
     //     fireworksCanvas.value.addEventListener('click', () => fw.triggerFirework(), false)
     // }
+    watchEffect(() => {
+        fw.setTrigger(false)
+    })
+    trigger()
+    // setInterval(trigger, Math.random() * (2000 - 3000) + 3000)
 })
 
 function trigger() {
-    // fw.triggerFirework()
-
-    // fws.push(fw.FireworkSketch(-1, -1))
     fw.FireworkSketch(-1, -1)
     // console.log(fw)
 }

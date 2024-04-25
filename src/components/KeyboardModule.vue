@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import { useStatusHandler } from '../stores/statusHandler'
+import { usestatusModel } from '../stores/statusModel'
 import { onMounted, onUnmounted } from 'vue'
 import { keygraph } from '../assets/typing/keygraph.js'
 
-let gameStatus = useStatusHandler()
+let gameStatus = usestatusModel()
 
 // スペースキーが押されたときに実行する関数
 const handleSpacePress = (event) => {

@@ -1,4 +1,3 @@
-import { ref, computed } from 'vue'
 import { defineStore } from 'pinia'
 import p5 from 'p5'
 
@@ -16,9 +15,14 @@ const colors = [
 ]
 
 export const useFireworks = defineStore('useFireworks', {
-    state: () => ({}),
+    state: () => ({
+        trigger: false
+    }),
     getters: {},
     actions: {
+        setTrigger(bool) {
+            this.trigger = bool
+        },
         FireworkSketch(scaleNum, stepNum) {
             const sketch = (p) => {
                 let isFinished = false
@@ -114,7 +118,7 @@ export const useFireworks = defineStore('useFireworks', {
                             isFinished = true
                         }
                     } else {
-                        // すべてのパーティクルの描画が終了したらDOMとインスタンスを削除
+                        // すべてのパーティクルの描画が終了したらDOMとp5を削除
                         p.remove()
                     }
                 }
@@ -164,8 +168,8 @@ export const useFireworks = defineStore('useFireworks', {
                     }
                     display() {
                         if (!this.active || this.color.levels[3] <= 0) return // 透明度が低い場合は描画をスキップ
-                        p.drawingContext.shadowBlur = 8
-                        p.drawingContext.shadowColor = this.color
+                        // p.drawingContext.shadowBlur = 8
+                        // p.drawingContext.shadowColor = this.color
                         // p.drawingContext.filter = 'blur(2px)'
                         p.fill(this.color)
                         // console.log(this.color)

@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { computed } from 'vue'
-import { useStatusHandler } from '../stores/statusHandler'
+import { usestatusModel } from '../stores/statusModel'
 
-const gameStatus = useStatusHandler()
+const gameStatus = usestatusModel()
 
 function gameStart() {
     gameStatus.incrementStep()
