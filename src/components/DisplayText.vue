@@ -19,12 +19,28 @@ onMounted(() => {
 
     // タイプする文章
     let dataset = [
-        { disp: 'タイピングゲームの', str: 'たいぴんぐげーむの' },
-        { disp: '打つ文字を', str: 'うつもじを' },
-        { disp: '自分で', str: 'じぶんで' },
-        { disp: '作ることが', str: 'つくることが' },
-        { disp: 'できます', str: 'できます' }
+        { disp: '梅雨の季節', str: 'つゆのきせつ' },
+        { disp: '雨が多い', str: 'あめがおおい' },
+        { disp: 'カビが生えやすい', str: 'かびがはえやすい' },
+        { disp: 'ジメジメする', str: 'じめじめする' },
+        { disp: '傘を忘れずに', str: 'かさをわすれずに' }
+        // { disp: '梅雨明けはいつ', str: 'つゆあけはいつ' },
+        // { disp: '洗濯物が乾かない', str: 'せんたくものがかわかない' },
+        // { disp: '湿度が高い', str: 'しつどがたかい' },
+        // { disp: '雨音を聞く', str: 'あまおとをきく' },
+        // { disp: '梅雨入り宣言', str: 'つゆいりせんげん' },
+        // { disp: '長靴を履く', str: 'ながぐつをはく' },
+        // { disp: '水たまり', str: 'みずたまり' },
+        // { disp: 'スコール', str: 'すこーる' },
+        // { disp: '雷が鳴る', str: 'かみなりがなる' },
+        // { disp: '雨の日が続く', str: 'あめのひがつづく' },
+        // { disp: 'アジサイの花', str: 'あじさいのはな' },
+        // { disp: '蒸し暑い', str: 'むしあつい' },
+        // { disp: '土砂降り', str: 'どしゃぶり' },
+        // { disp: '嵐の前の静けさ', str: 'あらしのまえのしずけさ' },
+        // { disp: '梅雨寒', str: 'つゆびえ' }
     ]
+
     // プログラムをタイプするときに、スペース4つをauto completeで対応するための auto complete設定を入れる配列
     const keygraph_autocompletes = []
     // url引数でタイプする文字が指定されているときに、それをdatasetにする。
@@ -137,7 +153,7 @@ onMounted(() => {
         if (keygraph.is_finished()) {
             const seq = dataset_mgr.next_string()
             seq === undefined
-                ? reset_game('終わりです。お疲れ様です。\nスペースキーで再スタートします。')
+                ? reset_game('すばらしい！ スペースキーで再スタートします')
                 : disp(seq)
         }
     }
@@ -163,7 +179,7 @@ onMounted(() => {
         tm.clear()
         dataset_mgr.reset()
     }
-    reset_game('スペースキーでスタートします。')
+    reset_game('スペースキーでゲームスタート！')
 })
 </script>
 

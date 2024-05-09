@@ -1,12 +1,12 @@
 <script lang="ts" setup>
 import { computed } from 'vue'
-import { usestatusModel } from '../stores/statusModel'
+import { useStatusModel } from '../stores/statusModel'
 import StartBtn from './StartBtn.vue'
 import SubTxt from '../components/SubTxt.vue'
 import KeyboardM from '../components/KeyboardModule.vue'
 import DisplayLayout from '../components/DisplayLayout.vue'
 import FwBackGround from '../components/FwBackground.vue'
-const gameStatus = usestatusModel()
+const gameStatus = useStatusModel()
 const classObj = computed(() => {
     return {
         [`step-${gameStatus.step}`]: gameStatus.step !== null,

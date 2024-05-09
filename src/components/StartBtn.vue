@@ -1,19 +1,18 @@
 <script setup lang="ts">
 import { computed } from 'vue'
-import { usestatusModel } from '../stores/statusModel'
+import { useStatusModel } from '../stores/statusModel'
 
-const gameStatus = usestatusModel()
+const gameStatus = useStatusModel()
 
 function gameStart() {
-    gameStatus.incrementStep()
     gameStatus.gameStart()
-    console.log(gameStatus.step)
+    // console.log(gameStatus.gameStart)
 }
 </script>
 
 <template>
     <button class="start c-glass" @click="gameStart">
-        <h2 class="c-glow-txt">Start Hanabi Typing!</h2>
+        <h2 class="c-glow-txt">Let's Hanabi Typing!</h2>
     </button>
 </template>
 
